@@ -1,0 +1,6 @@
+[submodule "bindsnet"]
+	path = bindsnet
+	url = git://github.com/Hananel-Hazan/bindsnet
+[submodule "irap_dvs"]
+	path = irap_dvs
+	url = https://github.com/irapkaist/irap_dvs.git
