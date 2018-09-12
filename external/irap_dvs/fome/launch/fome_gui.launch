@@ -1,0 +1,13 @@
+<launch>
+  <node name="fome_node" pkg="fome" type="fome_ros" />
+	<rosparam param="use_sim_time" subst_value="true" />
+	<param name="DECAY_RATE" value="0.01" />
+	<param name="FRAME_RATE" value="400" />
+	<param name="SEGMT_SIZE" value="2000" />
+	
+	<!--samsungdvs : 640,480 / davis346b : 346,260 / davis240c : 240,180-->
+	<param name="IMAGE_WIDTH" value="240" />
+	<param name="IMAGE_HEIGHT" value="180" />
+	
+  <node name="fome_gui" pkg="fome_gui" type="fome_gui" />
+</launch>

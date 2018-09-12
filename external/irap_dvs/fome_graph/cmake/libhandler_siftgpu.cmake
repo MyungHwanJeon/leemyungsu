@@ -1,0 +1,7 @@
+macro (libhandler_siftgpu)
+  libhandler_find_library (siftgpu "did you build siftgpu in third-party?" ${ARGN})
+  if (SIFTGPU_FOUND)
+    add_definitions (-DSIFTGPU_FOUND)
+    set (IRPLIB_SIFTGPU ${SIFTGPU_LIBRARIES})
+  endif ()
+endmacro ()

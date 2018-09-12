@@ -1,0 +1,6 @@
+macro (libhandler_pthread)
+  libhandler_find_library (pthread "on ubuntu `sudo apt-get install build-essential`" ${ARGN})
+  if (PTHREAD_FOUND)
+    set (IRPLIB_PTHREAD ${PTHREAD_LIBRARIES})
+  endif ()
+endmacro ()

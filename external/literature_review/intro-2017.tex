@@ -1,0 +1,17 @@
+\section{Introduction}
+\label{sec:intro}
+
+In machine vision application, \acf{VO} is widely used to estimate camera pose
+and to localize position from processing image data. The typical \ac{VO} uses information
+from the \ac{APS} sensors, leaving some inherent problems with the frame-based
+cameras, weak in high dynamic-range or rapid environments. Frame-based cameras
+naturally have blurring and limited dynamic range. That is, even with improved
+algorithms, \ac{VO} tends to show lower accuracy in high dynamic-ranged scenes.
+The event-based cameras, however, overcame these difficulties, by measuring
+the temporal intensity changes of each pixel.
+
+There were recent trials in \ac{VO} with event-based cameras. These algorithms need
+precise \ac{APS} images~\cite{kueng2016low} or require additional calculations to
+reconstruct intensity image~\cite{CGV-017}. Our goal is to build a method to
+extract features only with event information to utilize high temporal
+resolution characteristics of the event-based vision sensor.

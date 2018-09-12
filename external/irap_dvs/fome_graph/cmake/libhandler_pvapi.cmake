@@ -1,0 +1,6 @@
+macro (libhandler_pvapi)
+  libhandler_find_library (PvAPI "did you build AVT_PvAPI_SDK in third-party?" ${ARGN})
+  if (PVAPI_FOUND)
+    set (IRPLIB_PVAPI ${PVAPI_LIBRARIES})
+  endif ()
+endmacro ()

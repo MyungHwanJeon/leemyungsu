@@ -1,0 +1,6 @@
+macro (libhandler_zlib)
+  libhandler_find_package (ZLIB "On Ubuntu, install zlib1g-dev" ${ARGN})
+  if (ZLIB_FOUND)
+    set (IRPLIB_ZLIB ${ZLIB_LIBRARIES})
+  endif ()
+endmacro ()

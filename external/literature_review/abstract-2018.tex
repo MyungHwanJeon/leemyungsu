@@ -1,0 +1,22 @@
+\begin{abstract}
+ The Event camera produces improved visual information compared
+ to the conventional CMOS-based cameras, which provides the 
+ possibility of performing more stable and temporally accurate
+ recognition. However The Event cameras has difficulty on fully
+ exploiting its advantages, due the difficulty on associating the
+ temporal and spatial correspondence of its data. There were some
+ attempts to handle event data using various algorithms like 
+ temporal plane fitting and entropy-based fitting, but they still
+ lack on utilizing the continuous-measurement characteristics of
+ The Event cameras.
+ 
+ In this papaer, we present a method for estimating optical flow
+ and clusterizing the scene information, without the limitation of
+ frame, to utilize the temporal continuity of The Event camera.
+ Our algorithm first defines the temporal luminance difference by
+ accumulating the events, and computes optical flow by the spatial
+ gradient in a local patch. Then for the next step, scene information
+ are classified into clusters by the differnce of the temporal event
+ potential. We aim to perform robust visual tracking with our
+ optical flow based visual clustering.
+\end{abstract}

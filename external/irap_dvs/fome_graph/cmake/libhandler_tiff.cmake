@@ -1,0 +1,7 @@
+macro (libhandler_tiff)
+  libhandler_find_package (TIFF "on ubuntu `sudo apt-get install libtiff-dev`" ${ARGN})
+  if (TIFF_FOUND)
+    include_directories (${TIFF_INCLUDE_DIR})
+    set (IRPLIB_TIFF ${TIFF_LIBRARIES})
+  endif ()
+endmacro ()

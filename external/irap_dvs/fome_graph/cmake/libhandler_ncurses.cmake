@@ -1,0 +1,8 @@
+macro (libhandler_ncurses)
+  set (CURSES_NEED_NCURSES TRUE)
+  libhandler_find_package (CURSES "on ubuntu `sudo apt-get install libcurses-dev`" ${ARGN})
+  if (CURSES_FOUND)
+    include_directories (${CURSES_LIBRARIES})
+    set (IRPLIB_NCURSES ${CURSES_LIBRARIES})
+  endif ()
+endmacro ()

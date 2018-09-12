@@ -1,0 +1,45 @@
+//------------------------------------------------------------------------------
+// register set file for DVS GEN2
+//------------------------------------------------------------------------------
+// <usage>
+// SA:RA=VAL
+//    set register value via I2C
+//    SA  : slave address(hex)
+//    RA  : register address(hex)
+//    VAL : register value(hex)
+// 
+// WAIT=TIME
+//    wait until TIME elapses
+//    TIME : wait time(ms)
+//
+// <slave address>
+//  20h : DVS_LEFT(SINGLE)
+//  30h : DVS_RIGHT
+//  40h : DVS2FX(FPGA)
+//  1Ch : M2P_LEFT(SINGLE)
+//  1Ah : M2P_RIGHT
+//------------------------------------------------------------------------------
+		
+// initialize DVS_LEFT
+20:301E=01		// set PARA_OUT_EN_r
+20:3000=02		// set DVS_MODE to Active Mode (enable PLL)
+WAIT=1
+20:0111=00		// subsampling 00: full, 55: 1/2, aa: 1/4, ff: 1/8
+20:0049=01		// enable ATOP and set BIAS
+WAIT=1
+
+//20:390C=04		// 
+//20:390B=08		// set use_big_endian
+20:390B=88		// set use_big_endian | use_timeout
+//20:3902=00		// WC_L
+//20:3903=20		// WC_H : 8KB
+20:3900=08		// set fx3_enable
+//20:3019=00		// set fx3_clock to 100MHz
+//20:3019=02		// set fx3_clock to 100MHz | clock_inversion
+20:3019=01		// set fx3_clock to 50MHz
+
+20:0014=62		// decress noise(?)
+//20:0014=30
+//20:0013=00
+20:3500=01		// bypass activity decision
+20:3200=06		// enable AGEN

@@ -1,0 +1,6 @@
+macro (libhandler_f2c)
+  libhandler_find_library (f2c "on ubuntu `sudo apt-get install libf2c2-dev`" ${ARGN})
+  if (F2C_FOUND)
+    set (IRPLIB_F2C ${F2C_LIBRARIES})
+  endif ()
+endmacro ()

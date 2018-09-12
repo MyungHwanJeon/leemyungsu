@@ -1,0 +1,6 @@
+macro (libhandler_cuda)
+  libhandler_find_library (cuda "on ubuntu `sudo apt-get install libcuda??`" ${ARGN})
+  if (CUDA_FOUND)
+    set (IRPLIB_CUDA ${CUDA_LIBRARIES})
+  endif ()
+endmacro ()

@@ -1,0 +1,13 @@
+macro (libhandler_devil)
+  # note: can't use libhandler_find_package() b/c it assumes that package and package_FOUND var share the same name
+  #libhandler_find_package (DevIL "on ubuntu `sudo apt-get install libdevil-dev`" ${ARGN})
+  find_package (DevIL ${ARGN})
+  if (IL_FOUND)
+    include_directories (${IL_INCLUDE_DIR})
+    set (IRPLIB_DEVIL ${IL_LIBRARIES} ${ILU_LIBRARIES} ${ILUT_LIBRARIES})
+    mark_as_advanced (IL_LIBRARIES ILU_LIBRARIES ILUT_LIBRARIES IL_INCLUDE_DIR)
+  else ()
+    set (INSTALLMSG "on ubuntu `sudo apt-get install libdevil-dev`")
+    libhandler_error ("package DevIL not found; ${INSTALLMSG}")
+  endif ()
+endmacro ()

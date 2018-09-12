@@ -1,0 +1,6 @@
+macro (libhandler_qhull)
+  libhandler_find_library (qhull "on ubuntu `sudo apt-get install libqhull-dev`" ${ARGN})
+  if (QHULL_FOUND)
+    set (IRPLIB_QHULL ${QHULL_LIBRARIES})
+  endif ()
+endmacro ()
