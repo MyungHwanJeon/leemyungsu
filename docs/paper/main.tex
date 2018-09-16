@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+%\makeatletter
+%\let\NAT@parse\undefined
+%\makeatother
+
+% natbib hack
+% http://newsgroups.derkeiler.com/Archive/Comp/comp.text.tex/2006-02/msg00834.html
+\makeatletter
+\let\NAT@parse\undefined
+\makeatother
+\usepackage[numbers]{natbib}
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{array,booktabs}
+\usepackage{diagbox}
+\usepackage{balance}
+
+\usepackage{irap_SIunits}
+\usepackage{irap_acronyms}
+\usepackage{irap_math}
+\usepackage{irap_misc}
+
+% for comments
+\usepackage{soul,color}
+
+% To highlight the revised MS
+\usepackage{xcolor}
+\newcommand{\bl}[1]{{\textcolor{blue}{#1}}}
+\newtheorem{theorem}{Theorem}
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator{\Tr}{Tr}
+
+\title{\LARGE \bf
+Title TBD
+}
+
+\author{authors
+\thanks{thanks to}
+	}%
+
+
+
+\begin{document}
+
+%\onecolumn
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+\input{abstract}
+\input{introduction}
+\input{relatedwork}
+\input{method}
+\input{experiment}
+\input{conclusion}
+
+
+\balance
+%\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtranN} % not IEEEtran, but IEEEtranN for using citeauthor
+\bibliography{string-short,reference}
+
+
+\end{document}
